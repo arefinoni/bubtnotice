@@ -7,7 +7,7 @@ const PIPELINE_STEPS = [
     title: "GitHub Actions Cron",
     subtitle: "Automated Orchestration",
     icon: "⏰",
-    interval: "Every 30 Minutes",
+    interval: "Every 12 hour",
     tags: ["Cron Trigger", "Ubuntu-Latest", "Headless Runner"],
     description: "GitHub Actions runner spins up on an ephemeral Ubuntu 22.04 LTS virtual machine on a strict 30-minute schedule (`*/30 * * * *`). Includes a monthly keep-alive job to ensure workflows never get disabled.",
     why: "Eliminates 24/7 dedicated server costs while maintaining 99.9% uptime and zero maintenance overhead.",
@@ -17,7 +17,7 @@ const PIPELINE_STEPS = [
 name: BUBT Notice Scraper
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    -  cron: "0 */12 * * *"
   workflow_dispatch:
   push:
     branches: [ main ]`
